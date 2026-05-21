@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIDNIGHT BLUE — Filadd | Apresentação Estratégica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --midnight-0: #03050F;
+    --midnight-1: #070B1F;
+    --midnight-2: #0D1438;
+    --midnight-3: #1A2356;
+    --neon-blue: #4A9EFF;
+    --neon-cyan: #00E5FF;
+    --neon-glow: #6DB3FF;
+    --moon: #C8D6F5;
+    --ice: #E8F1FF;
+    --ice-dim: #A7B8D9;
+    --muted: #5A6B92;
+    --line: rgba(106, 137, 200, 0.18);
+    --line-strong: rgba(106, 137, 200, 0.4);
+    --card: rgba(13, 20, 56, 0.55);
+    --card-hover: rgba(26, 35, 86, 0.7);
+    --danger: #FF5C8A;
+    --warn: #FFB547;
+    --ok: #5EFFC1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--midnight-0);
+    color: var(--ice);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(74, 158, 255, 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 229, 255, 0.08), transparent 60%),
+      radial-gradient(circle 600px at 85% 15%, rgba(200, 214, 245, 0.08), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, var(--moon), transparent),
+      radial-gradient(1px 1px at 60% 70%, var(--ice), transparent),
+      radial-gradient(1px 1px at 80% 10%, var(--moon), transparent),
+      radial-gradient(1px 1px at 35% 80%, var(--ice), transparent),
+      radial-gradient(1px 1px at 90% 50%, var(--moon), transparent),
+      radial-gradient(1px 1px at 10% 60%, var(--ice), transparent);
+    background-size: 100% 100%;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 40px;
+    position: relative;
+  }
+
+  .moon {
+    position: absolute;
+    top: 100px;
+    right: 80px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #E8F1FF, #6DB3FF 60%, #1A2356);
+    box-shadow:
+      0 0 80px rgba(109, 179, 255, 0.4),
+      0 0 200px rgba(74, 158, 255, 0.2),
+      inset -20px -20px 40px rgba(7, 11, 31, 0.5);
+    opacity: 0.85;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--neon-blue);
+  }
+
+  .hero-meta .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--neon-cyan), 0 0 24px var(--neon-cyan);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(64px, 11vw, 168px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #6DB3FF 60%, #4A9EFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero h1 .blue-accent {
+    background: linear-gradient(180deg, #4A9EFF 0%, #00E5FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    color: var(--ice-dim);
+    max-width: 720px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .hero-stat {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 24px 36px;
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    border-radius: 18px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    width: fit-content;
+  }
+
+  .hero-stat .hero-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .hero-stat .hero-number-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    color: var(--ice);
+    font-weight: 500;
+  }
+
+  .hero-stat .hero-number-foot {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ice-dim);
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+  }
+
+  .hero-tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .tag {
+    padding: 8px 16px;
+    background: rgba(74, 158, 255, 0.08);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ice-dim);
+    text-transform: uppercase;
+  }
+
+  .tag.accent {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: rgba(0, 229, 255, 0.3);
+    color: var(--neon-cyan);
+  }
+
+  /* ============ SECTIONS ============ */
+  .section {
+    margin: 100px auto;
+    scroll-margin-top: 40px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-blue);
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    color: var(--ice);
+    margin-bottom: 14px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--ice-dim);
+    max-width: 720px;
+    font-weight: 300;
+  }
+
+  /* ============ CARDS ============ */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    backdrop-filter: blur(20px);
+    transition: all 0.25s ease;
+  }
+
+  .card:hover {
+    border-color: var(--line-strong);
+    background: var(--card-hover);
+    transform: translateY(-2px);
+  }
+
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ice);
+    letter-spacing: -0.01em;
+  }
+
+  .card .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    color: var(--ice-dim);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+
+  /* ============ NARRATIVE ============ */
+  .narrative {
+    padding: 56px;
+    background:
+      radial-gradient(ellipse at top right, rgba(74, 158, 255, 0.14), transparent 60%),
+      linear-gradient(180deg, rgba(13, 20, 56, 0.6), rgba(7, 11, 31, 0.6));
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+  }
+
+  .narrative p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ice);
+    font-weight: 300;
+    margin-bottom: 18px;
+  }
+
+  .narrative p:last-child { margin-bottom: 0; }
+
+  .narrative p.lead {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--ice);
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+
+  .narrative em {
+    color: var(--neon-cyan);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ============ STAT ============ */
+  .stat {
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+  }
+
+  .stat .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--neon-cyan);
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+  }
+
+  .stat .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ice-dim);
+    margin-bottom: 6px;
+  }
+
+  .stat .stat-note {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  /* ============ JOURNEY ============ */
+  .journey {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .journey-step {
+    padding: 22px 20px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .journey-step::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--neon-blue);
+    font-size: 16px;
+    z-index: 2;
+  }
+
+  .journey-step:last-child::after { display: none; }
+
+  .journey-step .step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--neon-cyan);
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+  }
+
+  .journey-step .step-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ice);
+    margin-bottom: 6px;
+  }
+
+  .journey-step .step-desc {
+    font-size: 12.5px;
+    color: var(--ice-dim);
+    line-height: 1.5;
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 1px solid var(--line-strong);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--midnight-0);
+    border: 2px solid var(--neon-blue);
+  }
+
+  .timeline-item.active::before {
+    background: var(--neon-cyan);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 14px var(--neon-cyan);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ice);
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    color: var(--ice-dim);
+    font-size: 14px;
+  }
+
+  /* ============ COPY BLOCK ============ */
+  .copy-block {
+    background: var(--midnight-1);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 14px;
+  }
+
+  .copy-block .copy-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--neon-cyan);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .copy-block .copy-tag::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--neon-cyan);
+  }
+
+  .copy-block .copy-text {
+    color: var(--ice);
+    font-size: 14.5px;
+    line-height: 1.65;
+    white-space: pre-line;
+  }
+
+  .copy-block .copy-subject {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--neon-cyan);
+    margin-bottom: 6px;
+  }
+
+  /* ============ TABLE ============ */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--midnight-1);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+
+  .matrix-table th,
+  .matrix-table td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: 13.5px;
+  }
+
+  .matrix-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--neon-blue);
+    background: rgba(74, 158, 255, 0.05);
+    font-weight: 500;
+  }
+
+  .matrix-table td {
+    color: var(--ice-dim);
+    vertical-align: top;
+  }
+
+  .matrix-table td strong {
+    color: var(--ice);
+    font-weight: 600;
+  }
+
+  .matrix-table tr:last-child td { border-bottom: none; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .badge.b-wa { background: rgba(94, 255, 193, 0.12); color: var(--ok); border: 1px solid rgba(94, 255, 193, 0.3); }
+  .badge.b-email { background: rgba(74, 158, 255, 0.12); color: var(--neon-blue); border: 1px solid rgba(74, 158, 255, 0.3); }
+  .badge.b-hot { background: rgba(255, 92, 138, 0.12); color: var(--danger); border: 1px solid rgba(255, 92, 138, 0.3); }
+  .badge.b-warm { background: rgba(255, 181, 71, 0.12); color: var(--warn); border: 1px solid rgba(255, 181, 71, 0.3); }
+
+  /* ============ CHECKLIST ============ */
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+
+  .check-box {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid var(--neon-blue);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .check-item .label {
+    font-size: 13.5px;
+    color: var(--ice);
+    line-height: 1.5;
+  }
+
+  /* ============ PALETTE ============ */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .swatch {
+    aspect-ratio: 1.3;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--line);
+  }
+
+  .swatch .swatch-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .swatch .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    opacity: 0.85;
+  }
+
+  /* ============ COUNTDOWN ============ */
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+  }
+
+  .countdown-phrase {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(74, 158, 255, 0.08), rgba(0, 229, 255, 0.04));
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--neon-cyan);
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ice);
+  }
+
+  .countdown-phrase .time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--neon-cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ RISK ============ */
+  .risk-card {
+    padding: 22px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--warn);
+    border-radius: 12px;
+  }
+
+  .risk-card.critical { border-left-color: var(--danger); }
+
+  .risk-card .risk-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ice);
+    margin-bottom: 6px;
+  }
+
+  .risk-card .risk-level {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--warn);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .risk-card.critical .risk-level { color: var(--danger); }
+
+  .risk-card .risk-mitig {
+    font-size: 13.5px;
+    color: var(--ice-dim);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    line-height: 1.55;
+  }
+
+  .risk-card .risk-mitig strong {
+    color: var(--neon-cyan);
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ============ HEADLINE LIST ============ */
+  .headline-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .headline-list .h-row {
+    padding: 14px 18px;
+    background: var(--midnight-1);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .headline-list .h-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-cyan);
+    min-width: 28px;
+  }
+
+  .headline-list .h-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    color: var(--ice);
+    font-weight: 500;
+  }
+
+  /* ============ POP-UP ============ */
+  .popup-mockup {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 44px 32px;
+    background: linear-gradient(180deg, var(--midnight-1) 0%, var(--midnight-0) 100%);
+    border: 1px solid var(--neon-blue);
+    border-radius: 18px;
+    box-shadow: 0 20px 80px rgba(74, 158, 255, 0.2), inset 0 1px 0 rgba(109, 179, 255, 0.15);
+    text-align: center;
+  }
+
+  .popup-mockup .popup-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .popup-mockup .popup-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--ice);
+    margin-bottom: 10px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .popup-mockup .popup-title span {
+    background: linear-gradient(180deg, var(--neon-blue), var(--neon-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .popup-mockup .popup-sub {
+    font-size: 14.5px;
+    color: var(--ice-dim);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .popup-mockup .popup-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(180deg, var(--neon-blue), #2D7BE0);
+    color: white;
+    border-radius: 100px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(74, 158, 255, 0.4);
+  }
+
+  .popup-mockup .popup-foot {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 18px;
+    letter-spacing: 0.15em;
+  }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    padding: 50px 40px 70px;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer .signature {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    background: linear-gradient(180deg, var(--neon-blue), var(--neon-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+  }
+
+  .footer .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .container, .hero { padding: 0 24px; }
+    .hero { padding-top: 60px; padding-bottom: 60px; }
+    .section { margin: 70px auto; }
+    .narrative { padding: 32px 24px; }
+    .narrative p.lead { font-size: 20px; }
+    .narrative p { font-size: 16px; }
+    .journey { grid-template-columns: 1fr; }
+    .journey-step::after { display: none; }
+    .stat .stat-value { font-size: 38px; }
+    .moon { width: 90px; height: 90px; top: 60px; right: 30px; }
+    .hero-stat .hero-number { font-size: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="moon"></div>
+  <div class="container">
+    <div class="hero-meta">
+      <span class="dot"></span>
+      <span>FILADD // DROP NOTURNO · 25.MAI.2026</span>
+    </div>
+
+    <h1>MIDNIGHT<br><span class="blue-accent">BLUE.</span></h1>
+
+    <p class="hero-sub">
+      Uma madrugada. Uma janela. Uma condição que só existe enquanto a cidade dorme.
+      Das <strong style="color: var(--neon-cyan)">20h às 06h</strong> do dia 25 de maio.
+    </p>
+
+    <div class="hero-stat">
+      <div class="hero-number">77%</div>
+      <div>
+        <div class="hero-number-sub">OFF na madrugada</div>
+        <div class="hero-number-foot">DESCONTO REAL FINAL · CUPOM SÓ NO GRUPO</div>
+      </div>
+    </div>
+
+    <div class="hero-tags">
+      <span class="tag accent">10h de janela</span>
+      <span class="tag">cupom liberado no grupo VIP</span>
+      <span class="tag">sem limite de vagas</span>
+      <span class="tag">aquecimento 22–25 mai</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 01 CONCEITO ============ -->
+<section class="container section" id="conceito">
+  <div class="section-header">
+    <div class="section-number">01 // Conceito</div>
+    <h2 class="section-title">Não é promoção. É uma madrugada.</h2>
+    <p class="section-sub">A Filadd abre uma janela de 10 horas e fecha. O cupom não está no site, não está pré-aplicado — está no grupo VIP. Quem está dentro, sabe primeiro e entra primeiro.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Princípio 1</div>
+      <h3>O cupom mora no grupo</h3>
+      <p>Sem código vazado no site. Sem desconto pré-aplicado no checkout. O cupom MIDNIGHT é liberado dentro do grupo VIP às 20h. Quem não está no grupo, não compra com 77%.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Princípio 2</div>
+      <h3>10 horas, e fim</h3>
+      <p>O cupom expira às 06h. Sem extensão, sem segunda chance. A escassez é o produto. A madrugada é o evento.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Princípio 3</div>
+      <h3>Acesso, não anúncio</h3>
+      <p>O anúncio convida. O grupo é a sala. A noite é o ritual. Estudantes acordados juntos, decidindo juntos.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px;" class="grid-4">
+    <div class="stat">
+      <div class="stat-label">Janela</div>
+      <div class="stat-value">10h</div>
+      <div class="stat-note">25.mai · 20h às 06h</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Aquecimento</div>
+      <div class="stat-value">4d</div>
+      <div class="stat-note">22 a 25 mai · 16h</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Cupom MIDNIGHT</div>
+      <div class="stat-value">48%</div>
+      <div class="stat-note">+ descontos do site</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Desconto real final</div>
+      <div class="stat-value">77%</div>
+      <div class="stat-note">é esse número que comunica</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 NARRATIVA ============ -->
+<section class="container section" id="narrativa">
+  <div class="section-header">
+    <div class="section-number">02 // Narrativa</div>
+    <h2 class="section-title">A história que a campanha conta.</h2>
+  </div>
+
+  <div class="narrative">
+    <p class="lead">Tem decisões que só acontecem no escuro. Quando a casa dorme. Quando ninguém está olhando. Quando você fica acordado com você mesmo.</p>
+
+    <p>No dia 25 de maio, das 20h às 06h, a Filadd vai abrir uma madrugada. Um modo da Filadd que só existe enquanto a cidade dorme — e que fecha quando o sol nasce.</p>
+
+    <p>O cupom <em>MIDNIGHT</em> não estará no site. Não vai estar pré-aplicado no checkout. Ele vai ser liberado dentro de um grupo VIP no WhatsApp, em mãos, para quem decidiu estar acordado.</p>
+
+    <p>Combinado aos descontos que já existem na plataforma, esse cupom faz qualquer curso da Filadd chegar a <em>77% OFF</em>. É um número que a Filadd nunca tinha chegado. E que não vai voltar tão cedo.</p>
+
+    <p>Em junho a Filadd faz <em>8 anos</em>. A MIDNIGHT BLUE é uma antecipação — não da festa, mas do gesto. Antes do bolo, a janela.</p>
+  </div>
+</section>
+
+<!-- ============ 03 OBJETIVO ============ -->
+<section class="container section" id="objetivo">
+  <div class="section-header">
+    <div class="section-number">03 // Objetivo Estratégico</div>
+    <h2 class="section-title">Recuperar o mês via audiência quente.</h2>
+    <p class="section-sub">Campanha de conversão acelerada, não de aquisição fria. O motor é destravar quem já conhece a Filadd e não converteu por preço, timing ou indecisão.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="kicker">// Eixo principal</div>
+      <h3>Acelerar conversão de audiência quente</h3>
+      <p>Remarketing pesado, recuperação de checkout abandonado, leads de WhatsApp não convertidos e base de e-mail engajada. A MIDNIGHT é o gatilho de "agora ficou possível".</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Eixo secundário</div>
+      <h3>Construção de ritual de marca</h3>
+      <p>Estabelecer "MIDNIGHT BLUE" como ativo recorrente da Filadd. Esta edição prepara terreno para os próximos drops sem queimar o conceito.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 PÚBLICO + SEGMENTAÇÃO ============ -->
+<section class="container section" id="publico">
+  <div class="section-header">
+    <div class="section-number">04 // Público & Segmentações</div>
+    <h2 class="section-title">Quem entra na madrugada.</h2>
+    <p class="section-sub">Toda comunicação assume que a pessoa já conhece a Filadd. Não tem onboarding, não tem prova de produto. Tem oportunidade.</p>
+  </div>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Camada</th>
+        <th>Audiência</th>
+        <th>Temperatura</th>
+        <th>Canal principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>T1 — Crítico</strong></td>
+        <td>Checkout abandonado ≤30 dias</td>
+        <td><span class="badge b-hot">Quente</span></td>
+        <td>WhatsApp 1:1 + E-mail + Remarketing</td>
+      </tr>
+      <tr>
+        <td><strong>T2 — Quente</strong></td>
+        <td>Lead WhatsApp não convertido ≤90 dias</td>
+        <td><span class="badge b-hot">Quente</span></td>
+        <td>WhatsApp 1:1 + E-mail</td>
+      </tr>
+      <tr>
+        <td><strong>T3 — Engajada</strong></td>
+        <td>Base e-mail ativa (abriu nos últimos 60d)</td>
+        <td><span class="badge b-warm">Morna</span></td>
+        <td>E-mail + Pop-up</td>
+      </tr>
+      <tr>
+        <td><strong>T4 — Site</strong></td>
+        <td>Visitantes 90d, sem compra</td>
+        <td><span class="badge b-warm">Morna</span></td>
+        <td>Meta Ads (remarketing) + Pop-up</td>
+      </tr>
+      <tr>
+        <td><strong>T5 — Social</strong></td>
+        <td>Engajamento IG/FB Filadd 90d</td>
+        <td><span class="badge b-warm">Morna</span></td>
+        <td>Meta Ads</td>
+      </tr>
+      <tr>
+        <td><strong>T6 — Look-alike</strong></td>
+        <td>LAL 1% de compradores 180d</td>
+        <td><span class="badge b-warm">Fria útil</span></td>
+        <td>Meta Ads</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 05 JORNADA ============ -->
+<section class="container section" id="jornada">
+  <div class="section-header">
+    <div class="section-number">05 // Jornada do Usuário</div>
+    <h2 class="section-title">Como a pessoa entra, espera e compra.</h2>
+  </div>
+
+  <div class="journey">
+    <div class="journey-step">
+      <div class="step-num">01 // DESCOBERTA</div>
+      <div class="step-title">Anúncio Meta</div>
+      <div class="step-desc">Vê criativo MIDNIGHT BLUE. Hook: madrugada + grupo VIP.</div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">02 // INTERESSE</div>
+      <div class="step-title">Formulário Instantâneo</div>
+      <div class="step-desc">Preenche nome + WhatsApp. Aceita entrar no grupo VIP.</div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">03 // AQUECIMENTO</div>
+      <div class="step-title">Dentro do Grupo</div>
+      <div class="step-desc">5 dias acompanhando o evento se aproximar.</div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">04 // ABERTURA</div>
+      <div class="step-title">20h — Cupom no grupo</div>
+      <div class="step-desc">Cupom MIDNIGHT liberado direto no grupo. Link para o site.</div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">05 // CONVERSÃO</div>
+      <div class="step-title">06h — Janela fecha</div>
+      <div class="step-desc">Quem comprou, fica. Quem perdeu, vê o resultado pela manhã.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 CRONOGRAMA ============ -->
+<section class="container section" id="cronograma">
+  <div class="section-header">
+    <div class="section-number">06 // Cronograma</div>
+    <h2 class="section-title">Linha do tempo.</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">SEX 22.MAI · D-3</div>
+      <div class="timeline-title">Sobe a captação</div>
+      <div class="timeline-desc">Anúncios Meta no ar. Pop-up ativado no site. Convite por e-mail para base T3. WhatsApp 1:1 para T1 e T2.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">23–24.MAI · D-2 a D-1</div>
+      <div class="timeline-title">Aquecimento</div>
+      <div class="timeline-desc">Volume de captação alto. Anúncios construindo a expectativa. E-mail #2 disparado em 24.MAI.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">SEG 25.MAI · 16h</div>
+      <div class="timeline-title">FIM DA CAPTAÇÃO</div>
+      <div class="timeline-desc">Última janela para entrar no grupo VIP. Anúncios mudam para countdown puro.</div>
+    </div>
+    <div class="timeline-item active">
+      <div class="timeline-date">SEG 25.MAI · 20h</div>
+      <div class="timeline-title">CUPOM LIBERADO NO GRUPO</div>
+      <div class="timeline-desc">Mensagem no grupo VIP com cupom + link. E-mail #3 disparado em massa. WhatsApp 1:1 em rajada para T1 e T2.</div>
+    </div>
+    <div class="timeline-item active">
+      <div class="timeline-date">26.MAI · 00h–05h</div>
+      <div class="timeline-title">MEIO DA MADRUGADA + ÚLTIMAS HORAS</div>
+      <div class="timeline-desc">Anúncios em pico de investimento. WhatsApp 1:1 segmentado para quem clicou e não comprou.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">TER 26.MAI · 06h</div>
+      <div class="timeline-title">JANELA FECHA</div>
+      <div class="timeline-desc">Cupom desativado. Pop-up sai do ar. Anúncios pausados. Zero veiculação no dia 26.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 ANÚNCIOS ============ -->
+<section class="container section" id="anuncios">
+  <div class="section-header">
+    <div class="section-number">07 // Anúncios Meta</div>
+    <h2 class="section-title">Três camadas. Um destino: o grupo.</h2>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// CONJ. 1 — Aquecimento</div>
+      <h3>Captação ampla</h3>
+      <p><strong style="color: var(--ice);">Objetivo:</strong> Lead Meta (formulário).<br><strong style="color: var(--ice);">Públicos:</strong> T5, T6, LAL 1%.<br><strong style="color: var(--ice);">Formato:</strong> reels + estático.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// CONJ. 2 — Remarketing</div>
+      <h3>Quem já visitou</h3>
+      <p><strong style="color: var(--ice);">Objetivo:</strong> Lead Meta.<br><strong style="color: var(--ice);">Públicos:</strong> T4 (site 90d), T1 (checkout 30d).<br><strong style="color: var(--ice);">Formato:</strong> estático com curso visitado.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// CONJ. 3 — Countdown</div>
+      <h3>Noite + últimas horas</h3>
+      <p><strong style="color: var(--ice);">Objetivo:</strong> tráfego para o grupo (cupom já no ar).<br><strong style="color: var(--ice);">Públicos:</strong> todos os remarketings.<br><strong style="color: var(--ice);">Formato:</strong> outdoor digital com hora.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">Copies curtas para anúncios</h3>
+
+  <div class="copy-block">
+    <div class="copy-tag">AQUECIMENTO — Reels</div>
+    <div class="copy-text">25 de maio. 20h às 06h.
+77% OFF na Filadd. Uma única madrugada.
+Cupom só dentro do grupo VIP.
+
+Entra antes que ele lote.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">REMARKETING — Quem visitou</div>
+    <div class="copy-text">Aquele curso que você olhou na semana passada?
+Dia 25, das 20h às 06h, ele fica 77% mais barato.
+Mas o cupom só sai no grupo VIP.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">REMARKETING — Checkout abandonado</div>
+    <div class="copy-text">Você quase fechou. A gente lembra.
+77% OFF na madrugada do dia 25.
+O cupom MIDNIGHT cai no grupo às 20h em ponto.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">COUNTDOWN — Últimas horas</div>
+    <div class="copy-text">O sol já vai nascer.
+Quando ele nascer, o cupom MIDNIGHT some.
+77% OFF até as 06h. Decide agora.</div>
+  </div>
+</section>
+
+<!-- ============ 08 POP-UP ============ -->
+<section class="container section" id="popup">
+  <div class="section-header">
+    <div class="section-number">08 // Pop-up do Site</div>
+    <h2 class="section-title">A porta de entrada para quem chega pelo site.</h2>
+    <p class="section-sub">Aparece para visitantes na zona quente. Não aparece para quem já está no grupo.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;" class="grid-2">
+    <div class="popup-mockup">
+      <div class="popup-eyebrow">// EVENTO — 25.MAI</div>
+      <div class="popup-title"><span>MIDNIGHT<br>BLUE</span></div>
+      <div class="popup-sub">
+        77% OFF em uma única madrugada.<br>
+        O cupom só sai no grupo VIP.
+      </div>
+      <div class="popup-btn">QUERO ENTRAR NO GRUPO</div>
+      <div class="popup-foot">// 20H ÀS 06H · GRUPO WHATSAPP</div>
+    </div>
+
+    <div>
+      <div class="copy-block">
+        <div class="copy-tag">VARIAÇÃO A — direto</div>
+        <div class="copy-text"><strong style="color: var(--ice);">Headline:</strong> MIDNIGHT BLUE chega dia 25.
+<strong style="color: var(--ice);">Sub:</strong> 77% OFF em uma única madrugada. Cupom liberado só no grupo VIP.
+<strong style="color: var(--ice);">CTA:</strong> QUERO ENTRAR NO GRUPO</div>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-tag">VARIAÇÃO B — curiosidade</div>
+        <div class="copy-text"><strong style="color: var(--ice);">Headline:</strong> Algo vai acontecer na madrugada de 25.
+<strong style="color: var(--ice);">Sub:</strong> A Filadd vai abrir uma janela. Quem está no grupo, entra primeiro.
+<strong style="color: var(--ice);">CTA:</strong> ENTRAR NA LISTA</div>
+      </div>
+
+      <div class="copy-block">
+        <div class="copy-tag">VARIAÇÃO C — quando a janela abre</div>
+        <div class="copy-text"><strong style="color: var(--ice);">Headline:</strong> A madrugada começou.
+<strong style="color: var(--ice);">Sub:</strong> Cupom MIDNIGHT no grupo VIP. Até as 06h.
+<strong style="color: var(--ice);">CTA:</strong> ABRIR O GRUPO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 GRUPO VIP ============ -->
+<section class="container section" id="grupo">
+  <div class="section-header">
+    <div class="section-number">09 // Grupo VIP WhatsApp</div>
+    <h2 class="section-title">O coração do evento.</h2>
+    <p class="section-sub">É onde o cupom mora. A régua de comunicação dentro do grupo a gente desenha com calma — aqui ficam os princípios.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Formato</div>
+      <h3>Grupo de transmissão</h3>
+      <p>Unidirecional (admin envia, ninguém responde). Mantém o canal limpo. Suporte 1:1 sempre por canal separado.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Identidade</div>
+      <h3>Nome + foto</h3>
+      <p>"MIDNIGHT BLUE · Filadd". Foto: lua azul neon sobre fundo midnight. Descrição: "Evento exclusivo. 25.mai, 20h às 06h."</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Princípios</div>
+      <h3>Cadência</h3>
+      <p>Aquecimento leve durante 4 dias. Mensagem-âncora antes das 20h. Cupom liberado às 20h em ponto. Mensagens de meio e fechamento na madrugada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 WHATSAPP ============ -->
+<section class="container section" id="whatsapp">
+  <div class="section-header">
+    <div class="section-number">10 // WhatsApp — Captação</div>
+    <h2 class="section-title">2 mensagens para puxar lead para o grupo.</h2>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">CAPTAÇÃO 1 // Convite institucional (base CRM)</div>
+    <div class="copy-text">Oi, [NOME]. Aqui é da Filadd.
+
+Dia 25 de maio, das 20h às 06h, a gente vai abrir a MIDNIGHT BLUE — uma madrugada com 77% OFF em qualquer curso da Filadd.
+
+O cupom só vai ser liberado dentro do grupo VIP, às 20h em ponto. Quem está no grupo, entra primeiro.
+
+👉 Quer que eu te coloque?
+[LINK DO GRUPO]</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">CAPTAÇÃO 2 // Reativação T2 (quem conversou e sumiu)</div>
+    <div class="copy-text">[NOME], oi. Lembra da gente?
+
+Da última vez você me disse que ia pensar. Tudo bem.
+
+Só estou te avisando porque dia 25 (segunda) a Filadd vai abrir uma madrugada com 77% OFF. É uma janela de 10h: começa 20h, acaba 06h. E o cupom só sai no grupo VIP.
+
+Posso te colocar no grupo? Você decide na madrugada se entra ou não.
+
+👉 [LINK DO GRUPO]</div>
+  </div>
+</section>
+
+<!-- ============ 11 CSERVICE ============ -->
+<section class="container section" id="cservice">
+  <div class="section-header">
+    <div class="section-number">11 // CService — A madrugada também é delas</div>
+    <h2 class="section-title">Atendimento com cupom próprio.</h2>
+    <p class="section-sub">Cada consultora recebe seu cupom personalizado durante a janela. Mesma mecânica do cupom geral, mas com atribuição individual — vira ferramenta de fechamento direto no 1:1. E a IA delas precisa entrar nesse mesmo modo madrugada.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// CUPOM PESSOAL · MarIA</div>
+      <h3>MIDNIGHT-M</h3>
+      <p><strong style="color: var(--ice);">Desconto:</strong> 48% OFF + descontos do site = até 77% real.<br><strong style="color: var(--ice);">Atribuição:</strong> toda venda com esse cupom conta para a MarIA.<br><strong style="color: var(--ice);">Quando usar:</strong> em conversa 1:1 durante a janela 20h–06h.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// CUPOM PESSOAL · Bia</div>
+      <h3>MIDNIGHT-B</h3>
+      <p><strong style="color: var(--ice);">Desconto:</strong> 48% OFF + descontos do site = até 77% real.<br><strong style="color: var(--ice);">Atribuição:</strong> toda venda com esse cupom conta para a Bia.<br><strong style="color: var(--ice);">Quando usar:</strong> em conversa 1:1 durante a janela 20h–06h.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// CUPOM GERAL · referência</div>
+      <h3>MIDNIGHT</h3>
+      <p><strong style="color: var(--ice);">Onde mora:</strong> liberado no grupo VIP do WhatsApp às 20h.<br><strong style="color: var(--ice);">Atribuição:</strong> tráfego direto, sem consultora envolvida.<br><strong style="color: var(--ice);">Coexistência:</strong> os 3 cupons rodam em paralelo. Não competem — cada um cobre um cenário.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">Ajuste da IA — sprint pré-campanha</h3>
+
+  <p style="color: var(--ice-dim); margin-bottom: 20px; max-width: 760px; font-size: 15px;">Cada consultora roda uma sprint curta de calibração da própria IA antes do dia 25. Não é refazer do zero — é ensinar a IA que existe uma campanha rodando, qual cupom ela tem na mão, e em que tom falar durante a madrugada.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="kicker">// PROMPT · atualizações obrigatórias</div>
+      <h3>O que a IA precisa saber</h3>
+      <p>· Existência da MIDNIGHT BLUE e datas (22–25 mai aquecimento, 25 mai 20h às 06h janela)<br>· Mecânica: cupom geral só no grupo VIP, cupom pessoal direto no 1:1<br>· Substituir cupom padrão pelo cupom da consultora (MIDNIGHT-M ou MIDNIGHT-B)<br>· Janela exata de validade · não oferecer fora do horário<br>· Tom alinhado: madrugada, evento, janela curta, sem soar "promoção genérica"</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// PROMPT · cenários treinados</div>
+      <h3>Como a IA reage</h3>
+      <p>· Lead já no grupo VIP → reforça cupom geral, não oferece o pessoal<br>· Lead fora do grupo → oferece o cupom pessoal direto<br>· Lead com objeção de preço → puxa MIDNIGHT como ponte<br>· Lead que abandonou checkout → cupom pessoal + link direto do carrinho dele<br>· Lead pedindo extensão pós-06h → não cede · "fica de olho na próxima MIDNIGHT"</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">Script de abordagem 1:1 — base para IA + consultora</h3>
+
+  <div class="copy-block">
+    <div class="copy-tag">CSERVICE // ABORDAGEM ATIVA · 25.MAI APÓS 20H</div>
+    <div class="copy-text">Oi, [NOME]. É a [MarIA / Bia] aqui da Filadd.
+
+Você sabia que hoje é a MIDNIGHT BLUE? 🌙
+A Filadd abriu uma janela: das 20h até as 06h, qualquer curso fica com 77% OFF.
+
+Eu separei um cupom pessoal pra você usar agora:
+🎟️ MIDNIGHT-[M/B]
+
+É só aplicar no checkout. Funciona até as 06h em ponto — depois disso volta ao preço normal.
+
+Quer que eu te mande o link direto do curso que você tava olhando?</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">CSERVICE // OBJEÇÃO DE PREÇO</div>
+    <div class="copy-text">Entendi. E é exatamente por isso que eu te chamei agora.
+
+Hoje, das 20h às 06h, esse curso fica com 77% OFF. Não é uma promoção que volta — é uma janela de uma noite só.
+
+Te mando o cupom MIDNIGHT-[M/B] agora pra você aplicar direto.
+Se você decidir ainda essa madrugada, garante. Amanhã volta ao preço de sempre.</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">CSERVICE // CHECKOUT ABANDONADO (T1)</div>
+    <div class="copy-text">[NOME], você quase fechou aquele curso semana passada.
+
+Hoje, das 20h até as 06h, ele tá com 77% OFF. É a MIDNIGHT BLUE — uma noite só.
+
+Tô te mandando o link com o cupom MIDNIGHT-[M/B] já aplicado:
+👉 [LINK DIRETO]
+
+Funciona até 06h da manhã. Depois disso volta ao preço de sempre.</div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">Regras dos cupons pessoais</h3>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Regra 1</div>
+      <h3>Mesma janela do geral</h3>
+      <p>MIDNIGHT-M e MIDNIGHT-B só funcionam entre 25.MAI 20h00 e 26.MAI 06h00. Mesmo lock automático do cupom geral — não funciona antes nem depois, mesmo digitado.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Regra 2</div>
+      <h3>1:1, nunca em massa</h3>
+      <p>Cupons pessoais são ferramenta de fechamento em conversa direta. Nada de lista de transmissão, post em redes ou compartilhamento no grupo VIP — quebra a lógica de exclusividade.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Regra 3</div>
+      <h3>Atribuição preserva o crédito</h3>
+      <p>Cada cupom tem rastreamento próprio no e-commerce. No fechamento, Comercial bate atribuição certinho — venda da MarIA não vira venda da Bia e vice-versa.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">Checklist CService</h3>
+
+  <div class="checklist">
+    <div class="check-item"><div class="check-box"></div><div class="label">Cupom MIDNIGHT-M criado no e-commerce (mesma regra de ativação + lock automático).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Cupom MIDNIGHT-B criado no e-commerce (mesma regra de ativação + lock automático).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Atribuição configurada no Metabase — venda por cupom rastreada individualmente.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">MarIA: prompt da IA atualizado com a campanha, cupom MIDNIGHT-M e cenários.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Bia: prompt da IA atualizado com a campanha, cupom MIDNIGHT-B e cenários.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Teste de conversa simulada com cada IA — mínimo 5 cenários antes de 25.MAI.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Escala de plantão definida: quem cobre 20h–01h, quem cobre 01h–06h.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Lista priorizada de leads para abordagem ativa na noite (T1 + T2 da matriz).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Script de abordagem aprovado por Marketing.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Briefing de cenários sensíveis (lead já no grupo, lead reincidente, lead bravo).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Desativação automática dos 3 cupons às 06h01 do dia 26.</div></div>
+  </div>
+</section>
+
+<!-- ============ 12 E-MAIL ============ -->
+<section class="container section" id="email">
+  <div class="section-header">
+    <div class="section-number">12 // E-mail — 3 disparos clickbait</div>
+    <h2 class="section-title">Subjects que abrem.</h2>
+    <p class="section-sub">E-mail aqui não é institucional — é gancho puro. Curiosidade na linha do subject, payoff dentro do corpo.</p>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">E-MAIL #1 — 22.MAI · 19h · ANÚNCIO</div>
+    <div class="copy-subject">77% OFF. Mas tem um detalhe.</div>
+    <div class="copy-text" style="margin-top: 10px;"><em style="color: var(--muted); font-style: normal;">Preheader:</em> O cupom existe. Só não está no site.
+
+—
+
+[NOME], abre rápido que essa eu não vou repetir.
+
+Dia 25 de maio, das 20h às 06h, a Filadd vai liberar 77% OFF em qualquer curso.
+
+O detalhe é o seguinte: o cupom não vai estar no site. Não vai estar pré-aplicado no checkout. Ele vai cair, em mãos, dentro de um grupo VIP no WhatsApp.
+
+Quem está no grupo, entra primeiro. Quem não está, descobre quando já acabou.
+
+Te vejo no grupo antes da meia-noite do dia 25?
+
+👉 ENTRAR NO GRUPO AGORA
+
+— Time Filadd</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">E-MAIL #2 — 24.MAI · 19h · LEMBRETE</div>
+    <div class="copy-subject">Amanhã às 20h, um cupom de 77% OFF cai em algum lugar.</div>
+    <div class="copy-text" style="margin-top: 10px;"><em style="color: var(--muted); font-style: normal;">Preheader:</em> Spoiler: o lugar é o grupo. E o grupo fecha às 16h.
+
+—
+
+[NOME], amanhã é a MIDNIGHT BLUE.
+
+20h em ponto, dentro do grupo VIP, o cupom MIDNIGHT vai aparecer. 77% OFF em qualquer curso da Filadd. Até as 06h da manhã.
+
+Não tem segunda chance. Não tem cupom "que esqueceram de tirar do ar". 06h o sistema desliga sozinho.
+
+Última coisa: o grupo fecha para novas entradas amanhã às 16h. Depois disso, ninguém mais é adicionado.
+
+Se você ainda está aí pensando, é agora.
+
+👉 ME COLOCA NO GRUPO
+
+— Time Filadd</div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-tag">E-MAIL #3 — 25.MAI · 20h00 · ABERTURA</div>
+    <div class="copy-subject">Caiu agora. Corre.</div>
+    <div class="copy-text" style="margin-top: 10px;"><em style="color: var(--muted); font-style: normal;">Preheader:</em> 77% OFF até as 06h. Cupom no grupo VIP do WhatsApp.
+
+—
+
+Tá no ar.
+
+Cupom MIDNIGHT já está dentro do grupo VIP no WhatsApp. 77% OFF em qualquer curso da Filadd, até as 06h da manhã.
+
+Se você está no grupo, é só abrir e pegar.
+Se ainda não está, o link tá aqui embaixo — mas avisa: depois das 06h, não dá nem mensagem na garrafa.
+
+👉 ABRIR O GRUPO
+👉 IR DIRETO PARO O SITE
+
+— Time Filadd</div>
+  </div>
+</section>
+
+<!-- ============ 12 MATRIZ BASES ============ -->
+<section class="container section" id="bases">
+  <div class="section-header">
+    <div class="section-number">13 // Matriz de Bases — quem recebe o quê</div>
+    <h2 class="section-title">Pressão calibrada por temperatura.</h2>
+  </div>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Base</th>
+        <th>WhatsApp</th>
+        <th>E-mail</th>
+        <th>Intensidade</th>
+        <th>Justificativa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>T1 — Checkout abandonado ≤30d</strong></td>
+        <td><span class="badge b-wa">SIM</span></td>
+        <td><span class="badge b-email">SIM</span></td>
+        <td><span class="badge b-hot">Alta</span></td>
+        <td>Lead mais quente. WhatsApp 1:1 + e-mail + remarketing.</td>
+      </tr>
+      <tr>
+        <td><strong>T2 — WhatsApp conversado ≤90d</strong></td>
+        <td><span class="badge b-wa">SIM</span></td>
+        <td><span class="badge b-email">SIM</span></td>
+        <td><span class="badge b-hot">Alta</span></td>
+        <td>Já existe relação 1:1. Consultora puxa fechamento na madrugada.</td>
+      </tr>
+      <tr>
+        <td><strong>T3 — E-mail engajado ≤60d</strong></td>
+        <td>—</td>
+        <td><span class="badge b-email">SIM</span></td>
+        <td><span class="badge b-warm">Média</span></td>
+        <td>Engaja por e-mail mas não necessariamente tem WhatsApp.</td>
+      </tr>
+      <tr>
+        <td><strong>T4 — Visitante site 90d</strong></td>
+        <td>—</td>
+        <td>—</td>
+        <td><span class="badge b-warm">Média</span></td>
+        <td>Sem dado de contato. Meta Ads remarketing + pop-up.</td>
+      </tr>
+      <tr>
+        <td><strong>T5 + T6 — Social + LAL</strong></td>
+        <td>—</td>
+        <td>—</td>
+        <td><span class="badge b-warm">Média</span></td>
+        <td>Meta Ads — captação ampla para o grupo.</td>
+      </tr>
+      <tr>
+        <td><strong>T-Frio — Base inativa &gt;180d</strong></td>
+        <td>—</td>
+        <td>Só #1</td>
+        <td><span class="badge b-warm">Baixa</span></td>
+        <td>1 e-mail de anúncio. Evita queima de base.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 20px;" class="card">
+    <div class="kicker">// Regra de bom senso</div>
+    <h3>Sem broadcast de WhatsApp marketing após 22h</h3>
+    <p>WhatsApp 1:1 da consultora pode continuar até 03h se o cliente já está respondendo. Disparo em massa, não. Grupo VIP segue regras próprias (quem entrou aceitou a mecânica).</p>
+  </div>
+</section>
+
+<!-- ============ 13 HEADLINES ============ -->
+<section class="container section" id="headlines">
+  <div class="section-header">
+    <div class="section-number">14 // Headlines & CTAs</div>
+    <h2 class="section-title">Banco de munição.</h2>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin-bottom: 14px;">Headlines</h3>
+
+  <div class="headline-list">
+    <div class="h-row"><span class="h-num">01</span><span class="h-text">MIDNIGHT BLUE. Uma madrugada. Uma janela. Só dia 25.</span></div>
+    <div class="h-row"><span class="h-num">02</span><span class="h-text">77% OFF na Filadd. Mas o cupom só sai no grupo.</span></div>
+    <div class="h-row"><span class="h-num">03</span><span class="h-text">Quando o sol nascer, o cupom MIDNIGHT some.</span></div>
+    <div class="h-row"><span class="h-num">04</span><span class="h-text">Não dorme cedo dia 25.</span></div>
+    <div class="h-row"><span class="h-num">05</span><span class="h-text">A condição mais rara da Filadd em 2026.</span></div>
+    <div class="h-row"><span class="h-num">06</span><span class="h-text">A Filadd vai abrir a madrugada. Quem está no grupo, entra primeiro.</span></div>
+    <div class="h-row"><span class="h-num">07</span><span class="h-text">10 horas. 77% OFF. Cupom só no grupo VIP.</span></div>
+    <div class="h-row"><span class="h-num">08</span><span class="h-text">Antes dos 8 anos da Filadd, uma madrugada especial.</span></div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 32px 0 14px;">CTAs por momento</h3>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Aquecimento — entrar no grupo</div>
+      <h3 style="font-size: 17px;">CTAs grupo VIP</h3>
+      <p>· QUERO ENTRAR NO GRUPO<br>· ME COLOCA NO GRUPO<br>· GARANTIR MEU LUGAR<br>· ENTRAR NA LISTA VIP</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Abertura — 20h</div>
+      <h3 style="font-size: 17px;">CTAs conversão</h3>
+      <p>· ABRIR O GRUPO<br>· PEGAR O CUPOM<br>· VER CURSOS COM 77% OFF<br>· APROVEITAR A MADRUGADA</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Encerramento — madrugada</div>
+      <h3 style="font-size: 17px;">CTAs urgência</h3>
+      <p>· AINDA DÁ TEMPO<br>· ÚLTIMAS HORAS<br>· FECHAR ANTES DO SOL<br>· CORRE</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14 COUNTDOWN ============ -->
+<section class="container section" id="countdown">
+  <div class="section-header">
+    <div class="section-number">15 // Frases de Urgência</div>
+    <h2 class="section-title">Frases que cabem em story, post ou pop-up.</h2>
+  </div>
+
+  <div class="countdown-grid">
+    <div class="countdown-phrase"><span class="time">— D-3</span>Em 72 horas, a Filadd abre uma madrugada que nunca abriu.</div>
+    <div class="countdown-phrase"><span class="time">— D-1</span>Amanhã, das 20h às 06h. Coloca o alarme.</div>
+    <div class="countdown-phrase"><span class="time">— 6 HORAS</span>Hoje a madrugada vale por um semestre.</div>
+    <div class="countdown-phrase"><span class="time">— 1 HORA</span>Não sai daí. Cupom cai no grupo às 20h.</div>
+    <div class="countdown-phrase"><span class="time">— 20H · ABRIU</span>É AGORA. Cupom MIDNIGHT no grupo.</div>
+    <div class="countdown-phrase"><span class="time">— 23H</span>Metade da madrugada. Quem está acordado, garante.</div>
+    <div class="countdown-phrase"><span class="time">— 03H</span>Faltam 3h. O sol não espera.</div>
+    <div class="countdown-phrase"><span class="time">— 05H30</span>30 minutos. Sem extensão.</div>
+    <div class="countdown-phrase"><span class="time">— 06H · FIM</span>A madrugada acabou. Até a próxima MIDNIGHT.</div>
+  </div>
+</section>
+
+<!-- ============ 15 VISUAL ============ -->
+<section class="container section" id="visual">
+  <div class="section-header">
+    <div class="section-number">16 // Direção Visual</div>
+    <h2 class="section-title">Estética de madrugada.</h2>
+    <p class="section-sub">A MIDNIGHT BLUE é a Filadd em modo madrugada. Lua, céu escuro, neon azul que reflete na cidade dormindo. Premium e silencioso — não é grito de promoção, é o gesto de abrir uma janela quando a casa está em silêncio.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="kicker">// Mood</div>
+      <h3>Madrugada premium</h3>
+      <p>Fundo quase preto com gradiente azul profundo. Lua como elemento âncora — não decorativo, simbólico. Estrelas sutis. Neon azul saturado em destaques. Vidro fosco (glassmorphism leve). Silêncio visual.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Referências</div>
+      <h3>O que conversa</h3>
+      <p>· Special Night Vivara (ritual de evento exclusivo)<br>· Apple Event (minimalismo escuro)<br>· Spotify Wrapped (tipografia + saturação)<br>· Y2K clean (digital, mas elegante)<br>· Skyline de janela aberta às 03h</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Space Grotesk'; font-size: 20px; color: var(--ice); margin: 28px 0 14px;">Paleta</h3>
+
+  <div class="palette">
+    <div class="swatch" style="background: #03050F;">
+      <div class="swatch-name" style="color: #fff;">MIDNIGHT 0</div>
+      <div class="swatch-hex" style="color: #fff;">#03050F · céu</div>
+    </div>
+    <div class="swatch" style="background: #0D1438;">
+      <div class="swatch-name" style="color: #fff;">MIDNIGHT 2</div>
+      <div class="swatch-hex" style="color: #fff;">#0D1438 · cards</div>
+    </div>
+    <div class="swatch" style="background: #1A2356;">
+      <div class="swatch-name" style="color: #fff;">MIDNIGHT 3</div>
+      <div class="swatch-hex" style="color: #fff;">#1A2356 · hover</div>
+    </div>
+    <div class="swatch" style="background: #4A9EFF; box-shadow: 0 0 30px rgba(74,158,255,0.5);">
+      <div class="swatch-name" style="color: #03050F;">NEON BLUE</div>
+      <div class="swatch-hex" style="color: #03050F;">#4A9EFF · accent</div>
+    </div>
+    <div class="swatch" style="background: #00E5FF; box-shadow: 0 0 30px rgba(0,229,255,0.5);">
+      <div class="swatch-name" style="color: #03050F;">NEON CYAN</div>
+      <div class="swatch-hex" style="color: #03050F;">#00E5FF · destaque</div>
+    </div>
+    <div class="swatch" style="background: #C8D6F5;">
+      <div class="swatch-name" style="color: #03050F;">MOON</div>
+      <div class="swatch-hex" style="color: #03050F;">#C8D6F5 · lua</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 28px;" class="grid-3">
+    <div class="card">
+      <div class="kicker">// Tipografia</div>
+      <h3>Fontes</h3>
+      <p><strong style="color: var(--ice);">Display:</strong> Space Grotesk<br><strong style="color: var(--ice);">Texto:</strong> Inter<br><strong style="color: var(--ice);">Técnica:</strong> JetBrains Mono (relógio, horários, códigos)</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Símbolos</div>
+      <h3>Vocabulário visual</h3>
+      <p>· Lua (cheia, com glow)<br>· Estrelas sutis<br>· Relógio digital LCD<br>· Linha do horizonte<br>· Silhueta de cidade dormindo<br>· Glow halo nos números</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// O que evitar</div>
+      <h3>Anti-referências</h3>
+      <p>· Cores quentes (vermelho, laranja)<br>· Estética de varejo (raio, lacre, "imperdível")<br>· Sticker promo<br>· Bolo / balão de aniversário<br>· Confete</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 16 CLIMA EMOCIONAL ============ -->
+<section class="container section" id="emocional">
+  <div class="section-header">
+    <div class="section-number">17 // Clima Emocional</div>
+    <h2 class="section-title">O que a pessoa sente em cada fase.</h2>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Antes</div>
+      <h3>Curiosidade calma</h3>
+      <p>"Algo está sendo preparado." Sem ansiedade ainda. Mas sente que vale a pena estar acordado naquele dia.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Pré-abertura</div>
+      <h3>Tensão crescente</h3>
+      <p>"Tá chegando." Coração acelerando, abrindo o WhatsApp, esperando o cupom cair.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Abertura</div>
+      <h3>Euforia coletiva</h3>
+      <p>"CAIU." Adrenalina pura. Screenshot do cupom, screenshot do checkout, mandando para o grupo da turma.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Meio da madrugada</div>
+      <h3>Cumplicidade</h3>
+      <p>"Quem está acordado comigo?" Comunidade noturna, comportamento coletivo, sensação de "estou dentro".</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Últimas horas</div>
+      <h3>Pressão real</h3>
+      <p>"Agora ou nunca." O relógio é o vilão. Quem ainda está indeciso precisa decidir.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Manhã seguinte</div>
+      <h3>Satisfação + FOMO</h3>
+      <p>Pra quem comprou: pertencimento. Pra quem perdeu: "preciso entrar no grupo da próxima MIDNIGHT".</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 17 CHECKLIST ============ -->
+<section class="container section" id="checklist">
+  <div class="section-header">
+    <div class="section-number">18 // Checklist Operacional</div>
+    <h2 class="section-title">O que precisa estar pronto antes das 20h do dia 25.</h2>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item"><div class="check-box"></div><div class="label">Cupom MIDNIGHT criado no e-commerce — ativação automática 25.MAI 20h00, expira 26.MAI 06h00.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Cupom não funciona antes das 20h, mesmo se digitado (proteção contra vazamento).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Teste de cumulatividade com descontos do site validado em 3+ produtos.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Stress test de servidor para pico das 20h (5x média histórica).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Pop-up no site versão captação (22.MAI a 25.MAI 16h).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Pop-up versão "grupo no ar" (25.MAI 20h em diante).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Formulário instantâneo Meta com auto-add ao grupo VIP (via ManyChat).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">3 conjuntos Meta estruturados: aquecimento · remarketing · countdown.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Criativos aprovados em variações D-5, D-2, D-Day, últimas horas.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Públicos custom uploaded: T1, T2, T3 (match rate validado).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Regra de pausa automática em 26.MAI 06h01.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Grupo VIP criado (transmissão), foto e descrição configuradas.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Listas de transmissão T1 e T2 preparadas (templates aprovados via API oficial).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Plantão comercial 1:1 escalado até 03h, com script MIDNIGHT.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">3 e-mails diagramados em versão dark, com CTA grande.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Segmentação CRM T1/T2/T3/T-Frio configurada com regras de exclusão.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">SPF/DKIM/DMARC OK · subject AB-testado em base pequena prévia.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Dashboard Metabase MIDNIGHT (faturamento por hora, ticket médio, cupons aplicados).</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">War room no dia 25: Marketing + Comercial + Tech em canal dedicado.</div></div>
+    <div class="check-item"><div class="check-box"></div><div class="label">Plano B se cupom apresentar bug (cupom backup + comunicação de emergência pronta).</div></div>
+  </div>
+</section>
+
+<!-- ============ 18 MÉTRICAS ============ -->
+<section class="container section" id="metricas">
+  <div class="section-header">
+    <div class="section-number">19 // Métricas Principais</div>
+    <h2 class="section-title">O que a madrugada precisa entregar.</h2>
+    <p class="section-sub">Cada métrica precisa de meta interna travada com Comercial antes do dia 25.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div class="kicker">// Macro</div>
+      <h3>Faturamento da janela</h3>
+      <p>Receita total entre 20h e 06h. Benchmark: comparar com melhor noite de Black Friday histórica.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Macro</div>
+      <h3>Nº de vendas e ticket médio</h3>
+      <p>Pedidos pagos com cupom aplicado. Curva por hora (esperar pico 20h–22h, segundo pico 04h–06h).</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Macro</div>
+      <h3>CAC blended</h3>
+      <p>Custo de aquisição da noite. Esperar CAC mais baixo pelo peso de remarketing e CRM.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Funil</div>
+      <h3>Leads no grupo VIP</h3>
+      <p>Total de entradas entre 22 e 25 mai. CPL por fonte (anúncio / site / CRM).</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Funil</div>
+      <h3>% conversão do grupo</h3>
+      <p>Quantos do grupo VIP compraram durante a janela. Métrica-chave da campanha.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Funil</div>
+      <h3>Taxa de aplicação do cupom</h3>
+      <p>% de checkouts iniciados que aplicaram MIDNIGHT corretamente.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// CRM</div>
+      <h3>Open rate e-mail #3</h3>
+      <p>Subject "Caiu agora. Corre." — meta ≥ benchmark da casa.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Saúde</div>
+      <h3>Descadastros e block rate</h3>
+      <p>Sinal de pressão excessiva. Calibrar próximas edições.</p>
+    </div>
+    <div class="card">
+      <div class="kicker">// Longo prazo</div>
+      <h3>Tamanho final do grupo VIP</h3>
+      <p>Base ativada para o próximo drop MIDNIGHT. Asset estratégico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 19 RISCOS ============ -->
+<section class="container section" id="riscos">
+  <div class="section-header">
+    <div class="section-number">20 // Riscos & Pontos de Atenção</div>
+    <h2 class="section-title">O que pode dar errado.</h2>
+  </div>
+
+  <div class="grid-2">
+    <div class="risk-card critical">
+      <div class="risk-level">RISCO CRÍTICO</div>
+      <div class="risk-title">Site cai no pico das 20h</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">Receita evapora. Grupo VIP vira raiva coletiva.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Stress test prévio, infra escalada para 5x pico histórico, war room tech, comunicação de emergência pronta.
+      </div>
+    </div>
+
+    <div class="risk-card critical">
+      <div class="risk-level">RISCO CRÍTICO</div>
+      <div class="risk-title">Cupom não soma com desconto do site</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">A promessa de 77% OFF cai por terra na hora.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Testar cumulatividade em ambiente real com 3+ produtos antes de 25.MAI. Cupom backup pronto.
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level">RISCO ALTO</div>
+      <div class="risk-title">Vazamento do cupom antes das 20h</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">Alguém do grupo ou colaborador antecipa.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Cupom ativado por sistema só às 20h00 (não funciona antes mesmo se digitado). Briefing interno com regra explícita.
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level">RISCO ALTO</div>
+      <div class="risk-title">Queima de base por excesso</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">Descadastros em massa. LTV da base afetado.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Matriz de bases respeitada. Base fria recebe só e-mail #1. Monitorar descadastro em tempo real.
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level">RISCO MÉDIO</div>
+      <div class="risk-title">Grupo VIP esvazia / não engaja</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">Mensagens com baixa visualização.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Régua de comunicação no grupo será desenhada à parte. Considerar bônus exclusivo do grupo se sinal vier negativo.
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-level">RISCO MÉDIO</div>
+      <div class="risk-title">Devoluções pós-evento</div>
+      <p style="color: var(--ice-dim); font-size: 14px;">Compra de madrugada vira arrependimento no D+3.</p>
+      <div class="risk-mitig">
+        <strong>// Mitigação</strong>
+        Comercial preparado para reter no D+7. Métricas separadas bruto/líquido. Projeção realista pós-evento.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="signature">MIDNIGHT BLUE</div>
+  <div class="meta">FILADD · 25.MAI.2026 · 20H ÀS 06H · APRESENTAÇÃO INTERNA</div>
+</footer>
+
+</body>
+</html>
